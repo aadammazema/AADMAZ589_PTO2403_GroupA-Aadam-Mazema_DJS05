@@ -43,3 +43,28 @@ const initialState = {
     };
   }
   
+  // Reducer Function
+  function tallyReducer(state = initialState, action) {
+    switch (action.type) {
+      case ADD:
+        return { ...state, tally: state.tally + 1 };
+      case SUBTRACT:
+        return { ...state, tally: state.tally - 1 };
+      case RESET:
+        return { ...state, tally: 0 };
+      default:
+        return state;
+    }
+  }
+  
+  // Create the store
+  const store = createStore(tallyReducer, initialState);
+  
+  // Subscribe to state changes 
+  store.subscribe(() => {
+    console.log('State changed:', store.getState());
+  });
+
+
+
+  
