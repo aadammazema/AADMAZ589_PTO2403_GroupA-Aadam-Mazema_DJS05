@@ -68,3 +68,15 @@ const initialState = {
 
 
   
+  // User Story 1: Initial State Verification
+  console.log(store.getState());  // { tally: 0 }
+ 
+  // User Story 2: Incrementing counter
+  store.dispatch({ type: ADD });      // State = { tally: 1 }
+  store.dispatch({ type: ADD });      // State = { tally: 2 }
+  
+  // User Story 3: Decrementing the Counter
+  store.dispatch({ type: SUBTRACT }); // State = { tally: 1 }
+  
+  // User Story 4: Resetting the Counter
+  store.dispatch({ type: RESET });    // State = { tally: 0 }
